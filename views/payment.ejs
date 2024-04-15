@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipcart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+    </style>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter";
+        }
+
+        /* header */
+
+        .z53f2G {
+            z-index: 4;
+        }
+
+        .dzn7Mw {
+            display: flex;
+        }
+
+        .dzn7Mw {
+            -webkit-box-flex: 1;
+            background-color: #fff;
+            height: 10%;
+            padding: 16px 16px 16px 8px;
+        }
+
+        .z6B\+q3 {
+            position: sticky;
+            top: 0;
+        }
+
+        .dzn7Mw .ZDYZh\+ {
+            -webkit-box-align: center;
+            align-items: center;
+            margin-right: 8px;
+        }
+
+        .dzn7Mw .ZDYZh\+ ._3NACFp {
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .dzn7Mw .ZJ-\+VB {
+            display: flex;
+        }
+
+        .dzn7Mw .ZJ-\+VB {
+            -webkit-box-flex: 1;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-box-pack: center;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .ellipsis-container {
+            overflow: hidden;
+        }
+
+        .font-s {
+            font-size: 12px;
+            letter-spacing: 0;
+            line-height: 18px;
+        }
+
+        .font-s {
+            font-size: 12px;
+            letter-spacing: 0;
+            line-height: 18px;
+        }
+
+        .font-s {
+            font-family: Inter;
+            font-weight: 400;
+        }
+
+        .dzn7Mw .comD76 {
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+        }
+
+        .dzn7Mw .xjuazR {
+            color: #212121;
+        }
+
+        .ellipsis-text {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .ellipsis-container,
+        .ellipsis-text {
+            overflow: hidden;
+        }
+
+        .font-l-semibold {
+            font-weight: 600;
+        }
+
+        .font-l,
+        .font-l-semibold {
+            font-size: 17px;
+            letter-spacing: -0.01px;
+            line-height: 24px;
+        }
+
+        .dzn7Mw .comD76 {
+            display: flex;
+        }
+
+        /* header */
+        .first-part {
+            box-shadow:
+                rgba(0, 0, 0, 0.12) 0px 1px 3px,
+                rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            float: left;
+            width: 100%;
+            height: auto;
+            background-color: rgb(255, 255, 255);
+            padding: 10px;
+            margin-bottom: 16px;
+        }
+
+        .progress {
+            height: auto;
+            max-width: 100%;
+            background-color: white;
+            padding-top: 20px;
+        }
+
+        .Continue {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            width: 94%;
+            border: none;
+            background-color: rgb(255, 194, 0);
+            color: rgb(0, 0, 0);
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+
+        .total {
+            float: left;
+            width: 95%;
+            height: auto;
+            background-color: #f0f5ff;
+            padding: 10px 10px 0px 10px;
+            margin-bottom: 16px;
+            border-radius: 10px;
+            margin: 0px 10px 0px 10px;
+            color: #204ce4;
+        }
+
+        .pay-part {
+            float: left;
+            width: 100%;
+            height: auto;
+            background-color: rgb(255, 255, 255);
+            font-size: 18px;
+            border-bottom: 1px solid rgb(190, 190, 190);
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 34px;
+        }
+
+        input[type="radio"] {
+            display: none;
+            /* Hide the actual radio buttons */
+        }
+
+        .custom-radio {
+            padding: 6px;
+            cursor: pointer;
+            border: 1px solid #000000;
+            border-radius: 25px;
+            margin: 5px;
+        }
+
+        /* Style for the selected radio button */
+        .custom-radio.selected {
+            background-color: #000000;
+            color: white;
+        }
+
+        .upi {
+            height: 3px;
+            width: 10px;
+            border: 1px solid black;
+            font-size: 9px;
+            padding: 1px 5px;
+            font-weight: 700;
+            border-radius: 5px;
+            margin-top: 100px;
+        }
+
+        .pay-part-2 {
+            float: left;
+            width: 100%;
+            height: auto;
+            background-color: rgb(255, 255, 255);
+            font-size: 16px;
+            padding-top: 10px;
+            padding-bottom: 0px;
+            padding-left: 15px;
+        }
+
+        /* ============================== */
+        .payment {
+            font-weight: 400;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .dzn7Mw .Dr7NNM {
+            display: flex;
+        }
+
+        .dzn7Mw .Dr7NNM {
+            align-items: center;
+            color: grey;
+            margin-left: 12px;
+        }
+
+        .font-s-semibold {
+            font-weight: 600;
+        }
+
+        .font-s,
+        .font-s-semibold {
+            font-size: 12px;
+            letter-spacing: 0;
+            line-height: 18px;
+        }
+
+        .WhceUs {
+            border-radius: 4px;
+            color: #424242;
+            padding: 0 4px 0 2px;
+        }
+
+        .flex-center {
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .NyzDQC,
+        .WhceUs {
+            background-color: #f5f5f5;
+        }
+
+        .dzn7Mw .YkJopE {
+            height: 12px;
+            width: 12px;
+        }
+
+        .tLBeHy img {
+            margin-left: 4px;
+            object-fit: contain;
+        }
+
+        :not(input):not(textarea):not(button) {
+            user-select: none;
+        }
+
+        a,
+        img {
+            border: none;
+            color: inherit;
+            outline: none;
+            text-decoration: none;
+        }
+
+        .lock {
+            margin: 27px 0px 0px 100px;
+        }
+
+        .font-l-semibold {
+            font-weight: 600;
+        }
+
+        .font-l,
+        .font-l-semibold {
+            font-size: 17px;
+            letter-spacing: -0.01px;
+            line-height: 24px;
+        }
+
+        .JpFbI2 {
+            background-color: #fff;
+            color: #9e9e9e;
+            flex-direction: column;
+            padding: 32px 69px 36px;
+            text-align: center;
+        }
+
+        /* ============== Payment =================== */
+        .nav-logobar-pay {
+            display: flex;
+            position: relative;
+            z-index: inherit;
+            background-color: #ffffff;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+
+        /* payment > */
+        .PLPj2L {
+            background-color: #fff;
+            padding: 0 16px 16px;
+        }
+
+        .nC8Q1W {
+            color: #2a55e5;
+            padding-bottom: 12px;
+        }
+
+        ._6Z01pv {
+            margin-top: 12px;
+        }
+
+        ._6Z01pv .aM0Q-J {
+            -webkit-box-pack: justify;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        ._6Z01pv .aM0Q-J .n59FcR,
+        ._6Z01pv .aM0Q-J .zy9AJ8 {
+            -webkit-box-align: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .primary-500 {
+            color: #2a55e5;
+        }
+
+        .x\+aL8E {
+            margin-left: 8px;
+            margin-top: 6px;
+        }
+
+        .x\+aL8E.wmkOE9 {
+            transform: rotate(90deg);
+        }
+
+        ._6Z01pv .aM0Q-J .n59FcR,
+        ._6Z01pv .aM0Q-J .zy9AJ8 {
+            -webkit-box-align: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .primary-500 {
+            color: #2a55e5;
+        }
+
+        .font-l-semibold {
+            font-weight: 600;
+        }
+
+        .font-l-semibold {
+            font-size: 17px;
+            letter-spacing: -0.01px;
+            line-height: 24px;
+        }
+
+        .-glKrM {
+            background-color: #f0f5ff;
+            border-radius: 8px;
+            color: #212121;
+            padding: 4px 12px;
+        }
+
+        /* content */
+        .nav-logobar-content {
+            display: flex;
+            z-index: inherit;
+            background-color: #ffffff;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ======================================== -->
+
+    <header class="dzn7Mw z6B+q3 z53f2G" data-testid="header">
+        <section class="ZDYZh+"><button
+                class="Button-module_button__18Bed font-m-semibold Button-module_secondary__j-3rj _3NACFp"
+                variant="secondary" aria-label="Back Button" data-testid="backButton"><a href="#"><img
+                    src="/image/icons8-arrow-left-24.png"></a></button>
+        </section>
+        <section class="ZJ-+VB font-s ellipsis-container">
+            <p class="font-s">Step 3 of 3</p>
+            <section class="comD76">
+                <h5 data-testid="page-title" class="font-l-semibold xjuazR ellipsis-text" style="margin-top: -20px;">
+                    Payments</h5>
+                <section class="Dr7NNM font-s-semibold" style="margin-top: -25px;">
+                    <div data-testid="callout" class="tLBeHy flex-center font-s-semibold WhceUs"><img
+                            src="/image/icons8-lock-24.png" class="YkJopE"
+                            data-testid="callout-left-img"><span data-testid="help">100% Secure</span>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </header>
+
+    <div class="PLPj2L">
+        <div data-testid="price-summary" class="-glKrM font-m">
+            <div class="nC8Q1W" data-testid="final-price">
+                <div class="_6Z01pv">
+                    <div class="aM0Q-J">
+                        <div class="n59FcR"><span class="primary-500">Total Amount</span><span><svg
+                                    class="x+aL8E wmkOE9" width="7" height="14" viewBox="0 0 5 9" fill="none"
+                                    data-testid="chevron">
+                                    <!-- <path class="" d="M1 8L4.5 4.5" stroke="#2A55E5" stroke-linecap="round"></path>
+                                <path class="" d="M1 1L4.5 4.5" stroke="#2A55E5" stroke-linecap="round"></path> -->
+                                </svg></span></div><span class="zy9AJ8"><span data-testid="price"
+                                class="primary-500 font-l-semibold">₹<%= price %></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- <div class="first-part">
+        <div class="d-flex">
+            <div>
+                <a href="order.html" style="text-decoration: none; color: #000;">
+                    <img src="/image/icons8-arrow-left-24.png" alt="#" style="margin-top: 15px;">
+                </a>
+            </div>
+            <span style="margin-left: 8px;">
+                <div style="margin-bottom: -16px;">
+                    <p style="margin: 8px 0px 0px 10px; font-size: 12px;">Step 3 of 3</p>
+                </div>
+                <div style="margin: 15px 0px 0px 10px; font-weight: 700; font-size: 17px;">
+                    Payments
+                </div>
+            </span>
+
+            <section class="Dr7NNM font-s-semibold lock">
+                <div data-testid="callout" class="tLBeHy flex-center font-s-semibold WhceUs"><img
+                        src="/image/icons8-lock-24.png" class="YkJopE"
+                        data-testid="callout-left-img"><span data-testid="help">100% Secure</span></div>
+            </section>
+        </div>
+    </div>
+    <div class="total mb-3">
+        <div style="font-size: 18px;">
+            <p>Total Amount<span style="margin-left: 190px; font-weight: 600;">₹369</span></p>
+        </div>
+    </div> -->
+
+    <!-- <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                    d="M2.5 6.52734C2.5 5.97506 2.94772 5.52734 3.5 5.52734H20.5C21.0523 5.52734 21.5 5.97506 21.5 6.52734V17.5222C21.5 18.0745 21.0523 18.5222 20.5 18.5222H3.5C2.94771 18.5222 2.5 18.0745 2.5 17.5222V6.52734Z"
+                    stroke="#212121" stroke-width="1.4" />
+                <path
+                    d="M7.59082 15.0732C7.06348 15.0732 6.611 14.9902 6.2334 14.8242C5.85905 14.6582 5.57259 14.4189 5.37402 14.1064C5.17546 13.7907 5.07617 13.4115 5.07617 12.9688V9.18457C5.07617 9.09017 5.11849 9.02018 5.20312 8.97461C5.28776 8.92578 5.4196 8.90137 5.59863 8.90137H5.8916C6.07064 8.90137 6.20085 8.92578 6.28223 8.97461C6.36686 9.02018 6.40918 9.09017 6.40918 9.18457V12.8809C6.40918 13.0827 6.45801 13.2633 6.55566 13.4229C6.65658 13.5824 6.79655 13.7077 6.97559 13.7988C7.15462 13.8867 7.3597 13.9307 7.59082 13.9307C7.82194 13.9307 8.02702 13.8867 8.20605 13.7988C8.38835 13.7077 8.52995 13.5824 8.63086 13.4229C8.73177 13.2633 8.78223 13.0827 8.78223 12.8809V9.18457C8.78223 9.09017 8.82292 9.02018 8.9043 8.97461C8.98893 8.92578 9.12077 8.90137 9.2998 8.90137H9.58789C9.76693 8.90137 9.89714 8.92578 9.97852 8.97461C10.0632 9.02018 10.1055 9.09017 10.1055 9.18457V12.9688C10.1055 13.4115 10.0062 13.7907 9.80762 14.1064C9.60905 14.4189 9.32096 14.6582 8.94336 14.8242C8.56901 14.9902 8.11816 15.0732 7.59082 15.0732ZM12.3047 15.0146C11.9564 15.0146 11.7822 14.9235 11.7822 14.7412V9.26758C11.7822 9.14714 11.8099 9.06087 11.8652 9.00879C11.9206 8.95345 12.0085 8.92578 12.1289 8.92578H13.9551C14.4954 8.92578 14.974 9.05762 15.3906 9.32129C15.8073 9.58496 16.0156 10.0863 16.0156 10.8252C16.0156 11.333 15.8952 11.7285 15.6543 12.0117C15.4134 12.2917 15.1416 12.4805 14.8389 12.5781C14.5394 12.6758 14.2725 12.7246 14.0381 12.7246H13.1201V14.7412C13.1201 14.9235 12.946 15.0146 12.5977 15.0146H12.3047ZM13.8916 11.5771C14.0999 11.5771 14.2773 11.5218 14.4238 11.4111C14.5736 11.3005 14.6484 11.1051 14.6484 10.8252C14.6484 10.542 14.5736 10.3434 14.4238 10.2295C14.2741 10.1156 14.0967 10.0586 13.8916 10.0586H13.1201V11.5771H13.8916ZM17.7021 15.0244C17.5264 15.0244 17.3945 15 17.3066 14.9512C17.222 14.9023 17.1797 14.8324 17.1797 14.7412V9.18457C17.1797 8.99251 17.3538 8.89648 17.7021 8.89648H18.0049C18.1839 8.89648 18.3141 8.9209 18.3955 8.96973C18.4801 9.01855 18.5225 9.09017 18.5225 9.18457V14.7412C18.5225 14.93 18.3499 15.0244 18.0049 15.0244H17.7021Z"
+                    fill="#212121" />
+                <path xmlns="http://www.w3.org/2000/svg"
+                    d="M7.59082 15.0732C7.06348 15.0732 6.611 14.9902 6.2334 14.8242C5.85905 14.6582 5.57259 14.4189 5.37402 14.1064C5.17546 13.7907 5.07617 13.4115 5.07617 12.9688V9.18457C5.07617 9.09017 5.11849 9.02018 5.20312 8.97461C5.28776 8.92578 5.4196 8.90137 5.59863 8.90137H5.8916C6.07064 8.90137 6.20085 8.92578 6.28223 8.97461C6.36686 9.02018 6.40918 9.09017 6.40918 9.18457V12.8809C6.40918 13.0827 6.45801 13.2633 6.55566 13.4229C6.65658 13.5824 6.79655 13.7077 6.97559 13.7988C7.15462 13.8867 7.3597 13.9307 7.59082 13.9307C7.82194 13.9307 8.02702 13.8867 8.20605 13.7988C8.38835 13.7077 8.52995 13.5824 8.63086 13.4229C8.73177 13.2633 8.78223 13.0827 8.78223 12.8809V9.18457C8.78223 9.09017 8.82292 9.02018 8.9043 8.97461C8.98893 8.92578 9.12077 8.90137 9.2998 8.90137H9.58789C9.76693 8.90137 9.89714 8.92578 9.97852 8.97461C10.0632 9.02018 10.1055 9.09017 10.1055 9.18457V12.9688C10.1055 13.4115 10.0062 13.7907 9.80762 14.1064C9.60905 14.4189 9.32096 14.6582 8.94336 14.8242C8.56901 14.9902 8.11816 15.0732 7.59082 15.0732ZM12.3047 15.0146C11.9564 15.0146 11.7822 14.9235 11.7822 14.7412V9.26758C11.7822 9.14714 11.8099 9.06087 11.8652 9.00879C11.9206 8.95345 12.0085 8.92578 12.1289 8.92578H13.9551C14.4954 8.92578 14.974 9.05762 15.3906 9.32129C15.8073 9.58496 16.0156 10.0863 16.0156 10.8252C16.0156 11.333 15.8952 11.7285 15.6543 12.0117C15.4134 12.2917 15.1416 12.4805 14.8389 12.5781C14.5394 12.6758 14.2725 12.7246 14.0381 12.7246H13.1201V14.7412C13.1201 14.9235 12.946 15.0146 12.5977 15.0146H12.3047ZM13.8916 11.5771C14.0999 11.5771 14.2773 11.5218 14.4238 11.4111C14.5736 11.3005 14.6484 11.1051 14.6484 10.8252C14.6484 10.542 14.5736 10.3434 14.4238 10.2295C14.2741 10.1156 14.0967 10.0586 13.8916 10.0586H13.1201V11.5771H13.8916ZM17.7021 15.0244C17.5264 15.0244 17.3945 15 17.3066 14.9512C17.222 14.9023 17.1797 14.8324 17.1797 14.7412V9.18457C17.1797 8.99251 17.3538 8.89648 17.7021 8.89648H18.0049C18.1839 8.89648 18.3141 8.9209 18.3955 8.96973C18.4801 9.01855 18.5225 9.09017 18.5225 9.18457V14.7412C18.5225 14.93 18.3499 15.0244 18.0049 15.0244H17.7021Z"
+                    fill="#212121" />
+            </svg>
+        </div> 
+        <div style="margin: 0px 0px 0px 10px; font-size: 14px; margin-top: 2px; font-weight: 600;">
+            UPI
+        </div> -->
+    <div>
+        <p style="margin-left: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none">
+                <path
+                    d="M2.5 6.52734C2.5 5.97506 2.94772 5.52734 3.5 5.52734H20.5C21.0523 5.52734 21.5 5.97506 21.5 6.52734V17.5222C21.5 18.0745 21.0523 18.5222 20.5 18.5222H3.5C2.94771 18.5222 2.5 18.0745 2.5 17.5222V6.52734Z"
+                    stroke="#212121" stroke-width="1.4" />
+                <path
+                    d="M7.59082 15.0732C7.06348 15.0732 6.611 14.9902 6.2334 14.8242C5.85905 14.6582 5.57259 14.4189 5.37402 14.1064C5.17546 13.7907 5.07617 13.4115 5.07617 12.9688V9.18457C5.07617 9.09017 5.11849 9.02018 5.20312 8.97461C5.28776 8.92578 5.4196 8.90137 5.59863 8.90137H5.8916C6.07064 8.90137 6.20085 8.92578 6.28223 8.97461C6.36686 9.02018 6.40918 9.09017 6.40918 9.18457V12.8809C6.40918 13.0827 6.45801 13.2633 6.55566 13.4229C6.65658 13.5824 6.79655 13.7077 6.97559 13.7988C7.15462 13.8867 7.3597 13.9307 7.59082 13.9307C7.82194 13.9307 8.02702 13.8867 8.20605 13.7988C8.38835 13.7077 8.52995 13.5824 8.63086 13.4229C8.73177 13.2633 8.78223 13.0827 8.78223 12.8809V9.18457C8.78223 9.09017 8.82292 9.02018 8.9043 8.97461C8.98893 8.92578 9.12077 8.90137 9.2998 8.90137H9.58789C9.76693 8.90137 9.89714 8.92578 9.97852 8.97461C10.0632 9.02018 10.1055 9.09017 10.1055 9.18457V12.9688C10.1055 13.4115 10.0062 13.7907 9.80762 14.1064C9.60905 14.4189 9.32096 14.6582 8.94336 14.8242C8.56901 14.9902 8.11816 15.0732 7.59082 15.0732ZM12.3047 15.0146C11.9564 15.0146 11.7822 14.9235 11.7822 14.7412V9.26758C11.7822 9.14714 11.8099 9.06087 11.8652 9.00879C11.9206 8.95345 12.0085 8.92578 12.1289 8.92578H13.9551C14.4954 8.92578 14.974 9.05762 15.3906 9.32129C15.8073 9.58496 16.0156 10.0863 16.0156 10.8252C16.0156 11.333 15.8952 11.7285 15.6543 12.0117C15.4134 12.2917 15.1416 12.4805 14.8389 12.5781C14.5394 12.6758 14.2725 12.7246 14.0381 12.7246H13.1201V14.7412C13.1201 14.9235 12.946 15.0146 12.5977 15.0146H12.3047ZM13.8916 11.5771C14.0999 11.5771 14.2773 11.5218 14.4238 11.4111C14.5736 11.3005 14.6484 11.1051 14.6484 10.8252C14.6484 10.542 14.5736 10.3434 14.4238 10.2295C14.2741 10.1156 14.0967 10.0586 13.8916 10.0586H13.1201V11.5771H13.8916ZM17.7021 15.0244C17.5264 15.0244 17.3945 15 17.3066 14.9512C17.222 14.9023 17.1797 14.8324 17.1797 14.7412V9.18457C17.1797 8.99251 17.3538 8.89648 17.7021 8.89648H18.0049C18.1839 8.89648 18.3141 8.9209 18.3955 8.96973C18.4801 9.01855 18.5225 9.09017 18.5225 9.18457V14.7412C18.5225 14.93 18.3499 15.0244 18.0049 15.0244H17.7021Z"
+                    fill="#212121" />
+                <path xmlns="http://www.w3.org/2000/svg"
+                    d="M7.59082 15.0732C7.06348 15.0732 6.611 14.9902 6.2334 14.8242C5.85905 14.6582 5.57259 14.4189 5.37402 14.1064C5.17546 13.7907 5.07617 13.4115 5.07617 12.9688V9.18457C5.07617 9.09017 5.11849 9.02018 5.20312 8.97461C5.28776 8.92578 5.4196 8.90137 5.59863 8.90137H5.8916C6.07064 8.90137 6.20085 8.92578 6.28223 8.97461C6.36686 9.02018 6.40918 9.09017 6.40918 9.18457V12.8809C6.40918 13.0827 6.45801 13.2633 6.55566 13.4229C6.65658 13.5824 6.79655 13.7077 6.97559 13.7988C7.15462 13.8867 7.3597 13.9307 7.59082 13.9307C7.82194 13.9307 8.02702 13.8867 8.20605 13.7988C8.38835 13.7077 8.52995 13.5824 8.63086 13.4229C8.73177 13.2633 8.78223 13.0827 8.78223 12.8809V9.18457C8.78223 9.09017 8.82292 9.02018 8.9043 8.97461C8.98893 8.92578 9.12077 8.90137 9.2998 8.90137H9.58789C9.76693 8.90137 9.89714 8.92578 9.97852 8.97461C10.0632 9.02018 10.1055 9.09017 10.1055 9.18457V12.9688C10.1055 13.4115 10.0062 13.7907 9.80762 14.1064C9.60905 14.4189 9.32096 14.6582 8.94336 14.8242C8.56901 14.9902 8.11816 15.0732 7.59082 15.0732ZM12.3047 15.0146C11.9564 15.0146 11.7822 14.9235 11.7822 14.7412V9.26758C11.7822 9.14714 11.8099 9.06087 11.8652 9.00879C11.9206 8.95345 12.0085 8.92578 12.1289 8.92578H13.9551C14.4954 8.92578 14.974 9.05762 15.3906 9.32129C15.8073 9.58496 16.0156 10.0863 16.0156 10.8252C16.0156 11.333 15.8952 11.7285 15.6543 12.0117C15.4134 12.2917 15.1416 12.4805 14.8389 12.5781C14.5394 12.6758 14.2725 12.7246 14.0381 12.7246H13.1201V14.7412C13.1201 14.9235 12.946 15.0146 12.5977 15.0146H12.3047ZM13.8916 11.5771C14.0999 11.5771 14.2773 11.5218 14.4238 11.4111C14.5736 11.3005 14.6484 11.1051 14.6484 10.8252C14.6484 10.542 14.5736 10.3434 14.4238 10.2295C14.2741 10.1156 14.0967 10.0586 13.8916 10.0586H13.1201V11.5771H13.8916ZM17.7021 15.0244C17.5264 15.0244 17.3945 15 17.3066 14.9512C17.222 14.9023 17.1797 14.8324 17.1797 14.7412V9.18457C17.1797 8.99251 17.3538 8.89648 17.7021 8.89648H18.0049C18.1839 8.89648 18.3141 8.9209 18.3955 8.96973C18.4801 9.01855 18.5225 9.09017 18.5225 9.18457V14.7412C18.5225 14.93 18.3499 15.0244 18.0049 15.0244H17.7021Z"
+                    fill="#212121" />
+            </svg>
+            <b style="font-size: 14px; font-weight: 600;">UPI</b>
+        </p>
+    </div>
+
+    <!-- ======================================================================= -->
+    <!-- 1 -->
+    <a href="phonepe://pay?pn=Vaghasiya&pa=<%= phonepe_upi_id %>&cu=INR&am=<%= price %>">
+        <div style="margin-bottom: 20px; border-top: 1px solid #e0e0e0; padding: 20px 0px 0px 0px;">
+            <div class="nav-logobar-pay">
+                <div>
+                    <div style="color: rgb(0, 0, 0); font-size: 12px;">
+                        <div class="d-flex m-2 ms-5">
+                            <div style="margin-right: 10px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <rect width="24" height="24" rx="12" fill="url(#pattern0)" />
+                                    <defs>
+                                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1"
+                                            height="1">
+                                            <use xlink:href="#image0_9079_134461" transform="scale(0.00277778)" />
+                                        </pattern>
+                                        <image id="image0_9079_134461" width="360" height="360"
+                                            xlink:href="data:image/png;base64,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" />
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="m-1" style="font-size: 14px;">Phone Pay</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="me-3 m-2">
+                    <div>
+                        <div style="align-items: end;">
+                            <label class="custom-radio" onclick="selectRadio('radio1')">
+                                <input type="radio" name="radioGroup" id="radio1">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <!-- 2 -->
+    <a href="tez://upi/pay?pn=Vaghasiya&pa=<%= gpay_upi_id %>&cu=INR&am=<%= price %>">
+        <div style="border-top: 1px solid #e0e0e0; padding: 20px 0px 20px 0px;">
+            <div class="nav-logobar-pay">
+                <div>
+                    <div style="color: rgb(0, 0, 0); font-size: 12px;">
+                        <div class="d-flex m-2 ms-5">
+                            <div style="margin-right: 10px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_5500_172593)">
+                                        <path
+                                            d="M11.34 12.6877V15.3727H10.44V8.73228H12.78C13.35 8.73228 13.89 8.93438 14.31 9.30971C14.73 9.65617 14.94 10.1759 14.94 10.7244C14.94 11.273 14.73 11.7638 14.31 12.1391C13.89 12.5144 13.38 12.7165 12.78 12.7165L11.34 12.6877ZM11.34 9.54068V11.8504H12.84C13.17 11.8504 13.5 11.7349 13.71 11.5039C14.19 11.0709 14.19 10.3491 13.74 9.91601L13.71 9.88714C13.47 9.65617 13.17 9.51181 12.84 9.54068H11.34Z"
+                                            fill="#5F6368" />
+                                        <path
+                                            d="M17.01 10.6955C17.67 10.6955 18.18 10.8688 18.57 11.2152C18.96 11.5617 19.14 12.0236 19.14 12.601V15.3727H18.3V14.7375H18.27C17.91 15.2572 17.4 15.5171 16.8 15.5171C16.29 15.5171 15.84 15.3727 15.48 15.084C15.15 14.7953 14.94 14.3911 14.94 13.958C14.94 13.4961 15.12 13.1207 15.48 12.832C15.84 12.5433 16.35 12.4278 16.95 12.4278C17.49 12.4278 17.91 12.5144 18.24 12.7165V12.5144C18.24 12.2257 18.12 11.937 17.88 11.7638C17.64 11.5617 17.34 11.4462 17.01 11.4462C16.5 11.4462 16.11 11.6483 15.84 12.0525L15.06 11.5906C15.54 10.9843 16.17 10.6955 17.01 10.6955ZM15.87 13.9869C15.87 14.2178 15.99 14.4199 16.17 14.5354C16.38 14.6798 16.62 14.7664 16.86 14.7664C17.22 14.7664 17.58 14.622 17.85 14.3622C18.15 14.1024 18.3 13.7848 18.3 13.4383C18.03 13.2362 17.64 13.1207 17.13 13.1207C16.77 13.1207 16.47 13.2073 16.23 13.3806C15.99 13.5249 15.87 13.727 15.87 13.9869Z"
+                                            fill="#5F6368" />
+                                        <path
+                                            d="M24 10.8399L21.03 17.3937H20.13L21.24 15.1129L19.29 10.8688H20.25L21.66 14.1312H21.69L23.07 10.8688H24V10.8399Z"
+                                            fill="#5F6368" />
+                                        <path
+                                            d="M7.77 12.1102C7.77 11.8504 7.74 11.5906 7.71 11.3307H3.96V12.8031H6.09C6 13.2651 5.73 13.6982 5.31 13.958V14.9108H6.6C7.35 14.2467 7.77 13.2651 7.77 12.1102Z"
+                                            fill="#4285F4" />
+                                        <path
+                                            d="M3.96 15.8346C5.04 15.8346 5.94 15.4882 6.6 14.9108L5.31 13.958C4.95 14.189 4.5 14.3333 3.96 14.3333C2.94 14.3333 2.04 13.6693 1.74 12.7454H0.42V13.727C1.11 15.0262 2.46 15.8346 3.96 15.8346Z"
+                                            fill="#34A853" />
+                                        <path
+                                            d="M1.74 12.7454C1.56 12.2835 1.56 11.7638 1.74 11.273V10.2913H0.42C-0.15 11.3596 -0.15 12.6299 0.42 13.727L1.74 12.7454Z"
+                                            fill="#FBBC04" />
+                                        <path
+                                            d="M3.96 9.71391C4.53 9.71391 5.07 9.91601 5.49 10.2913L6.63 9.19423C5.91 8.55905 4.95 8.18373 3.99 8.2126C2.49 8.2126 1.11 9.021 0.45 10.3202L1.77 11.3018C2.04 10.378 2.94 9.71391 3.96 9.71391Z"
+                                            fill="#EA4335" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_5500_172593">
+                                            <rect width="24" height="24" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="m-1" style="font-size: 14px;">Google pay</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="me-3 m-2">
+                    <div>
+                        <div style="align-items: end;">
+                            <label class="custom-radio" onclick="selectRadio('radio2')">
+                                <input type="radio" name="radioGroup" id="radio2">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <!-- 3 -->
+    <a href="paytmmp://pay?pa=<%= paytm_upi_id %>&pn=Cozy&am=<%= price %>&cu=INR">
+    <div style="border-top: 1px solid #e0e0e0; padding: 20px 0px 20px 0px;">
+        <div class="nav-logobar-pay">
+            <div>
+                <div style="color: rgb(0, 0, 0); font-size: 12px;">
+                    <div class="d-flex m-2 ms-5">
+                        <div style="margin-right: 10px;">
+                            <img src="/image/paytm_icon-icons.com_62778.png" alt="#"
+                                style="width: 25px; height: 25px;">
+                        </div>
+                        <div class="m-1" style="font-size: 14px;">Paytm</div>
+                    </div>
+                </div>
+            </div>
+            <div class="me-3 m-2">
+                <div>
+                    <div style="align-items: end;">
+                        <label class="custom-radio" onclick="selectRadio('radio3')">
+                            <input type="radio" name="radioGroup" id="radio3">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </a>
+
+
+    <div
+        style="border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; padding: 20px 0px 20px 0px;">
+        <div class="nav-logobar-pay">
+            <div>
+                <div style="color: rgb(0, 0, 0); font-size: 12px;">
+                    <div class="d-flex m-2 ms-5">
+                        <div style="margin-right: 10px;">
+                            <img src="/image/free-cash-on-delivery-1851649-1569374.webp" alt="#"
+                                style="width: 25px; height: 25px;">
+                        </div>
+                        <div class="m-1" style="font-size: 14px;">Cash on Delivery</div>
+                    </div>
+                </div>
+            </div>
+            <div class="me-3 m-2">
+                <div>
+                    <div style="align-items: end;">
+                        <div style="color: gray;" class="payment">Unavailable
+                            <img src="/image/icons8-question-32.png" alt="#"
+                                style="width: 25px; height: 25px; margin-left: 7px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 5 -->
+    <div
+        style="border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; padding: 20px 0px 20px 0px;">
+        <div class="nav-logobar-pay">
+            <div>
+                <div style="color: rgb(0, 0, 0); font-size: 12px;">
+                    <div class="d-flex m-2 ms-5">
+                        <div style="margin-right: 10px;">
+                            <img src="/image/icons8-installment-plan-24.png" alt="#"
+                                style="width: 25px; height: 25px;">
+                        </div>
+                        <div class="m-1" style="font-size: 14px;">EMI</div>
+                    </div>
+                </div>
+            </div>
+            <div class="me-3 m-2">
+                <div>
+                    <div style="align-items: end;">
+                        <div style="color: gray;" class="payment">Unavailable
+                            <img src="/image/icons8-question-32.png" alt="#"
+                                style="width: 25px; height: 25px; margin-left: 7px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ----------------- -->
+    <section class="font-l-semibold flex-center JpFbI2">
+        <div class="font-l-semibold">35 Crore happy customers and counting!</div>
+        <div class="ybR9AW flex-center OG2uvA _1uuTAs"><img
+                src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/smiley.svg" class="">
+        </div>
+    </section>
+
+    <!-- ================================== javascript ================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        function selectRadio(radioId) {
+            // Deselect all radio buttons
+            document.querySelectorAll('.custom-radio').forEach(function (radio) {
+                radio.classList.remove('selected');
+            });
+
+            // Select the clicked radio button
+            document.getElementById(radioId).parentNode.classList.add('selected');
+        }
+
+    </script>
+
+</body>
+
+</html>

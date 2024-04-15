@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>| Admin |</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'eapp/product.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/alertify.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/themes/default.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<style>
+    nav{
+        background: #0082e6;
+        height: 80px;
+        width: 100%;
+      }
+      label.logo{
+        color: white;
+        font-size: 35px;
+        line-height: 80px;
+        padding: 0 100px;
+        font-weight: bold;
+      }
+      nav ul{
+        float: right;
+        margin-right: 20px;
+      }
+      nav ul li{
+        display: inline-block;
+        line-height: 80px;
+        margin: 0 5px;
+      }
+      nav ul li a{
+        color: white;
+        font-size: 17px;
+        padding: 7px 13px;
+        border-radius: 3px;
+        text-transform: uppercase;
+      }
+      a.active,a:hover{
+        background: #1b9bff;
+        transition: .5s;
+      }
+      .checkbtn{
+        font-size: 30px;
+        color: white;
+        float: right;
+        line-height: 80px;
+        margin-right: 40px;
+        cursor: pointer;
+        display: none;
+      }
+      #check{
+        display: none;
+      }
+      @media (max-width: 952px){
+        label.logo{
+          font-size: 30px;
+          padding-left: 50px;
+        }
+        nav ul li a{
+          font-size: 16px;
+        }
+      }
+      @media (max-width: 858px){
+        .checkbtn{
+          display: block;
+        }
+        ul{
+          position: fixed;
+          width: 100%;
+          height: 100vh;
+          background: #2c3e50;
+          top: 80px;
+          left: -100%;
+          text-align: center;
+          transition: all .5s;
+        }
+        nav ul li{
+          display: block;
+          margin: 50px 0;
+          line-height: 30px;
+        }
+        nav ul li a{
+          font-size: 20px;
+        }
+        a:hover,a.active{
+          background: none;
+          color: #0082e6;
+        }
+        #check:checked ~ ul{
+          left: 0;
+        }
+      }
+      section{
+        background: url(bg1.jpg) no-repeat;
+        background-size: cover;
+        height: calc(100vh - 80px);
+      }
+      .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
+
+<body>
+  <div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>All <b>Products</b></h2>
+                </div>
+                <div class="col-sm-6">
+                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" style="margin-top: 10px;">
+                        <i class="material-icons">&#xE147;</i> <span>Add New Product</span>
+                    </a>
+                    
+                    <a href="#deleteEmployeeModal" data-toggle="modal"></a>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th><b>ID</b></th>
+                    <th><b>Name</b></th>
+                    <th><b>Size</b></th>
+                    <th><b>Color</b></th>
+                    <th><b>Offer</b></th>
+                    <th><b>Image</b></th>
+                    <th><b>MRP</b></th>
+                    <th><b>Price</b></th>
+                    <th><b>Brand</b></th>
+                    <th><b>Actions</b></th>
+                    <th><b>Edit</b></th>
+                </tr>
+            </thead>
+            <tbody>
+              <% var counter = 0; %>
+            <% products.forEach(function(pro) { %>
+            <tr>
+              <th><a href><b></b><%= pro.id %></a></th>
+              <td><%= pro.name %></td>
+              <td><%= pro.size %></td>
+              <td><%= pro.color %></td>
+              <td><%= pro.offer %></td>
+              <td><a href="<%= pro.image %>" target="_blank"><%= pro.image
+                  %></a></td>
+              <td><%= pro.mrp %></td>
+              <td><%= pro.price %></td>
+              <td><%= pro.brand %></td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox" class="product-toggle" <% if
+                    (pro.is_show) { %>checked <% } %> data-product-id="<%=
+                  pro.id %>">
+                  <span class="slider round"></span>
+                </label>
+              </td>
+              <td>
+                <a href="#editEmployeeModal-<%= counter %>" class="edit"
+                  data-toggle="modal">
+                  <i class="material-icons" data-toggle="tooltip"
+                    title="Edit">&#xE254;</i>
+                </a>
+              </td>
+            </tr>
+            <% counter++; %>
+            <% }); %>
+          </tbody>
+          
+        </table>
+    </div>
+</div>
+<!-- Edit Modal HTML -->
+<form action="/DzH45UAgmoTeaWV2GK-YhQ7P40k-ALHxLYWyWcw3" method="POST" enctype="multipart/form-data">
+  <div id="addEmployeeModal" class="modal fade">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h4 class="modal-title">Add Product</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">
+                  <div class="form-group">
+                      <label>Name</label>
+                      <input type="text" class="form-control" name="name" required>
+                  </div>
+                  <div class="form-group">
+                      <label>Size</label>
+                      <input type="text" class="form-control" name="size" required>
+                  </div>
+                  <div class="form-group">
+                      <label>Color</label>
+                      <input type="text" class="form-control" name="color" required>
+                  </div>
+                  <div class="form-group">
+                      <label>Offer</label>
+                      <input type="text" class="form-control" name="offer" required>
+                  </div>
+                  <div class="form-group">
+                      <label>MRP</label>
+                      <input type="number" class="form-control" name="mrp" required>
+                  </div>
+                  <div class="form-group">
+                      <label>Price</label>
+                      <input type="number" class="form-control" name="price" required>
+                  </div>
+                  <div class="form-group">
+                      <label>Brand</label>
+                      <input type="text" class="form-control" name="brand" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="image">Image</label>
+                      <input type="file" class="form-control" name="image" multiple id="image" required>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                  <input type="submit" class="btn btn-success" value="Add">
+              </div>
+          </div>
+      </div>
+  </div>
+</form>
+
+<% products.forEach(function(pro, index) { %>
+  <div id="editEmployeeModal-<%= index %>" class="modal fade">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <form method="post" action="/editproduct/<%= product_id %>" enctype="multipart/form-data">
+                  <div class="modal-header">
+                      <h4 class="modal-title">Edit Product</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="form-group">
+                          <label>Name</label>
+                          <input type="text" class="form-control" name="name" value="<%= pro.name %>" required>
+                      </div>
+                      <div class="form-group">
+                          <label>Size</label>
+                          <input type="text" class="form-control" name="size" value="<%= pro.size %>" required>
+                      </div>
+                      <div class="form-group">
+                          <label>Color</label>
+                          <input type="text" class="form-control" name="color" value="<%= pro.color %>" required>
+                      </div>
+                      <div class="form-group">
+                          <label>Price</label>
+                          <input type="number" class="form-control" name="price" value="<%= pro.price %>" required>
+                      </div>
+                      <div class="form-group">
+                          <label>Brand</label>
+                          <input type="text" class="form-control" name="brand" value="<%= pro.brand %>" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="image">Image</label>
+                        <input type="file" class="form-control" name="image" value="<%= pro.image %>" multiple id="image" required>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                      <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                      <input type="submit" class="btn btn-info" value="Save">
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+  <% }); %>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+$(document).ready(function () {
+    $('.product-toggle').change(function (event) {
+        event.preventDefault();
+
+        var productId = $(this).data('product-id');
+        var isShow = $(this).prop('checked'); // This will return true or false
+
+        $.ajax({
+            type: 'POST',
+            url: '/update_product_status/',
+            data: {
+                'product_id': productId,
+                'is_show': isShow, // Pass the Boolean value directly
+                'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+            },
+            dataType: 'json', // Specify the expected data type
+            success: function (data) {
+                console.log(data.message);
+            },
+            error: function (error) {
+                console.error('Error updating product status', error);
+            }
+        });
+    });
+});
+
+</script>  
+</body>
+
+</html>

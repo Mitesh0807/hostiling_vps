@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipcart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter";
+        }
+
+        .first-part {
+            float: left;
+            width: 100%;
+            height: auto;
+            background-color: rgb(255, 255, 255);
+            margin-bottom: 10px;
+        }
+
+        .first-part-1 {
+            width: 100%;
+            height: auto;
+            background-color: rgb(255, 255, 255);
+            padding: 10px;
+            margin-bottom: 4px;
+        }
+
+        .progress {
+            height: auto;
+            max-width: 100%;
+            background-color: white;
+            padding-top: 20px;
+        }
+
+        /* ==================== */
+        .r-1awozwy {
+            -webkit-box-align: center;
+            align-items: center;
+        }
+
+        .r-1777fci {
+            -webkit-box-pack: center;
+            justify-content: center;
+        }
+
+        .r-1udh08x {
+            overflow: hidden;
+        }
+
+        .css-1dbjc4n {
+            -webkit-box-align: stretch;
+            -webkit-box-direction: normal;
+            -webkit-box-orient: vertical;
+            align-items: stretch;
+            border: 0px solid black;
+            box-sizing: border-box;
+            display: flex;
+            flex-basis: auto;
+            flex-direction: column;
+            flex-shrink: 0;
+            margin: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            padding: 0px;
+            position: relative;
+            z-index: 0;
+        }
+
+        /* ================ */
+        div.gallery-2 img {
+            width: 100%;
+            height: auto;
+        }
+
+        .responsive-2 {
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            max-height: 400px;
+            padding-bottom: 30%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .img-fluid {
+            padding: 0 6px;
+            float: left;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .responsive-2 {
+                width: 49.99999%;
+                margin: 30px 0;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .responsive-2 {
+                width: 22%;
+            }
+        }
+
+        .responsive-3 {
+            padding: 0 6px;
+            float: left;
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .responsive-3 {
+                width: 49.99999%;
+                margin: 6px 0;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .responsive-3 {
+                width: 76%;
+                margin-left: 5px;
+            }
+        }
+
+        .image {
+            background-color: rgb(255, 255, 255);
+            width: 100%;
+            height: auto;
+            padding: 10px;
+            display: flex;
+            margin-top: 50px;
+        }
+
+        .star-icon {
+            height: 15px;
+            width: 15px;
+            background-size: cover;
+            background-image: url(/image/icons8-star-24.png);
+        }
+
+        .star-icon-0 {
+            height: 15px;
+            width: 15px;
+            background-size: cover;
+            background-image: url(/image/icons8-star-48.png);
+        }
+
+        .btn-part {
+            display: flex;
+            background-color: white;
+            padding: 6px 10px;
+            width: 100%;
+            height: auto;
+            position: fixed;
+        }
+
+        /* =============== qty ================= */
+        .nav-logobar {
+            display: flex;
+            position: relative;
+            z-index: inherit;
+            background-color: #ffffff;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+
+        .nav-logobar-1 {
+            position: relative;
+            z-index: inherit;
+            background-color: #ffffff;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+
+        .product-container-1 {
+            max-width: 1600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-container {
+            display: flex;
+            max-width: 1600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .product-image {
+            flex: 0 0 30%;
+            max-width: 100%;
+            margin-right: 20px;
+        }
+
+        .product-details {
+            flex-grow: 1;
+        }
+
+        .product-details h2 {
+            margin-top: 0;
+        }
+
+        .product-details p {
+            color: #555;
+        }
+
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            color: rgb(124, 124, 124);
+            margin: 0px 50px 0px 50px;
+            font-weight: bold;
+        }
+
+        .center-content {
+            text-align: left;
+        }
+
+        /* ====================== button */
+        .nav-logobar-btn {
+            display: flex;
+            /* position: relative; */
+            z-index: inherit;
+            background-color: #ffffff;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+            background-color: #ffffff;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px -4px 4px -2px;
+        }
+
+        .co-btn {
+            padding: 10px 60px;
+            background-color: rgb(255, 194, 0);
+            border-radius: 4px;
+            color: #000000;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* =============== qty ================= */
+    </style>
+</head>
+
+<body style="background-color: rgb(231, 231, 231);">
+
+    <!-- ================================ nav ================================ -->
+
+    <div class="first-part mb-4">
+        <div class="d-flex" style="margin: 15px 10px;">
+            <div>
+                <a href="buyNow.html" style="text-decoration: none; color: #000;">
+                    <img src="/image/icons8-arrow-left-24.png" alt="#">
+            </div>
+            <div style="margin: 2px 0px 0px 20px; font-weight: 700;">Order Summary</div>
+            </a>
+        </div>
+
+        <div>
+            <div class="css-1dbjc4n r-1awozwy r-1777fci r-1udh08x">
+                <div style="display: flex; position: relative; width: 100%; height: auto" class=""><img
+                        src="https://rukminim2.flixcart.com/www/1200/200/promos/07/05/2022/cc200d5d-6f40-4ed7-9431-fe0806c18025.png?q=90"
+                        loading="lazy" alt=""
+                        srcset="https://rukminim2.flixcart.com/www/390/65/promos/07/05/2022/cc200d5d-6f40-4ed7-9431-fe0806c18025.png?q=80 1x, https://rukminim2.flixcart.com/www/780/130/promos/07/05/2022/cc200d5d-6f40-4ed7-9431-fe0806c18025.png?q=60 2x, "
+                        style="width: 100%; height: 100%; margin: auto; object-fit: cover; opacity: 1;"><img
+                        src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/images/fk-default-image-75ff340b.png?q=90"
+                        loading="lazy" alt=""
+                        style="width: 100%; height: 100%; margin: auto; position: absolute; inset: 0px; padding: inherit; object-fit: cover; opacity: 0;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================================ address part ================================ -->
+
+    <div style="line-height: 8px;">
+        <div class="first-part-1" style="font-size: 14px;">
+            <div>
+                <p style="font-size: 13px; font-weight: 900;">Deliver to:</p>
+            </div>
+            <div>
+                <% context.forEach(function(pro) { %>
+                <p id="displayName" style="font-size: 13px; font-weight: 900;"><%= address_name %><br><br><br>
+                    <%= street %>
+                    <%= area %>
+                    <%= city %>
+                    <%= state %>
+                </p>
+    <% }); %>
+            </div>
+            <div style="font-size: 14px; line-height: 11px; margin: 18px 0px 14px 0px;">
+                <span id="displayaddress"
+                    style="margin-left: 2px; font-weight: 600; font-size: 12px; color: rgb(59, 59, 59);"></span>
+                <!-- <span id="displayAddress" style="font-weight: 600; font-size: 12px; color: rgb(59, 59, 59);"></span>
+                <span id="displayCity" style="font-weight: 600; font-size: 12px; color: rgb(59, 59, 59);"></span>
+                <span id="displayPin" style="font-weight: 600; font-size: 12px; color: rgb(59, 59, 59);"></span> -->
+            </div>
+            <div>
+                <p id="displayNumber" style="font-size: 12px; font-weight: 600; color: rgb(59, 59, 59);"></p>
+            </div>
+        </div>
+    </div>
+
+    <% context.forEach(function(pro) { %>
+
+    <div class="product-container-1">
+        <div class="product-container">
+            <div class="product-image">
+                <img src="<%= pro.image %>" alt="#" style="width: 100%;">
+            </div>
+            <div class="product-details">
+                <div>
+                    <p class="card-title" style="font-size: 14px;"><b><%= pro.brand %> <%= pro.name %></b></p>
+                    <p class="card-text" style="font-size: 11px;">Size: 28</p>
+                    <div class="d-flex">
+                        <div class="star-icon"></div>
+                        <div class="star-icon"></div>
+                        <div class="star-icon"></div>
+                        <div class="star-icon"></div>
+                        <div class="star-icon-0"></div>
+                        <img src="/image/fa_62673a.png" alt="#" style="width: 50px; height: 15px;">
+                    </div>
+                    <div class="d-flex mt-3">
+                        <h5 style="color: #388e3c; font-size: 14px;"><b>71% off</b></h5>
+                        <h5 style="text-decoration: line-through; color: gray; font-size: 14px;">
+                            <b><%= pro.mrp %></b>
+                        </h5>
+                        <h5 style="font-size: 14px;"><b>₹<%= pro.price %></b></h5>
+                    </div>
+                    <div>
+                        <h5 style="color: #388e3c; font-size: 14px;"><b>1 offer available</b></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h6 style="font-size: 13px; font-weight: 600;">Delivery by <%= pro.created_at.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) %><span
+                    style="color: gray; font-size: 14px;"><br><br></span><span
+                    style="color: gray; text-decoration: line-through; font-size: 13px;"> ₹40</span><span
+                    style="color: #388e3c; font-size: 13px;">
+                    FREE Delivery</span></h6>
+        </div>
+    </div>
+    <% }); %>
+    
+    <% context.forEach(function(pro) { %>
+
+    <div style="margin-bottom: 20px;" class="nav-logobar-1">
+        <div class="m-4 pt-3">
+            <h5 style="font-size: 14px; font-weight: 700;">Price Details</h5>
+        </div>
+        <div class="nav-logobar">
+            <div class="m-4 mt-1">
+                <div style="color: rgb(0, 0, 0); font-size: 12px;">
+                    <p>Price (1 item)</p>
+                    <p>Discount</p>
+                    <p>Delivery Charges</p>
+                    <p><b>Total Amount</b></p>
+                </div>
+            </div>
+            <div class="m-4 mt-1" style="text-align: right;">
+                <div style="color: rgb(0, 0, 0); font-size: 12px;">
+                    <p><b>₹<%= pro.mrp %></b></p>
+                    <p style="color: #388e3c;"><b>-₹<%= discount %></b></p>
+                    <p><b><span style="color: gray; text-decoration: line-through;">₹40
+                            </span><span style="color: #388e3c;">FREE
+                                Delivery</span></b></p>
+                    <p><b>₹<%= pro.price %></b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="center-container" style="margin-bottom: 80px;">
+        <div>
+            <img src="/image/safe and secure.jpg.png" alt="#"
+                style="height: 25px; width: 25px; margin: 0px 10px 20px 0px;">
+        </div>
+        <div class="center-content">
+            <p>Safe and secure payments. Easy
+                returns.
+                100% Authentic products.</p>
+        </div>
+    </div>
+    <!-- ================================================ -->
+    <footer>
+        <div class="nav-logobar-btn">
+            <div class="m-3 mb-0">
+                <div style="color: rgb(0, 0, 0); line-height: 3px;">
+                    <p style="font-size: 12px; text-decoration: line-through;">₹<%= pro.mrp %></p>
+                    <div style="font-size: 20px;"><b>₹<%= pro.price %></b></div>
+                </div>
+            </div>
+            <div class="m-3 mb-0" style="text-align: right;">
+                <div style="color: rgb(0, 0, 0); font-size: 12px;">
+                    <a href="/order/<%= pro.id %>" style="text-decoration: none;">
+                        <p class="co-btn"><b>Continue</b></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <% }); %>
+
+    <!-- ============================================================================================================= -->
+
+    <!-- ================================ javascript ================================ -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+
+        let addressValue = sessionStorage.getItem("areaAddress");
+
+        document.getElementById("displayAddress").innerHTML = "  " + addressValue;
+
+        let AddressValue = sessionStorage.getItem("address");
+
+        document.getElementById("displayaddress").innerHTML = "  " + AddressValue;
+
+        let phoneValue = sessionStorage.getItem("phoneNumber");
+
+        document.getElementById("displayNumber").innerHTML = "  " + phoneValue;
+
+        let nameValue = sessionStorage.getItem("name");
+
+        document.getElementById("displayName").innerHTML = "  " + nameValue;
+
+        let cityValue = sessionStorage.getItem("city");
+
+        document.getElementById("displayCity").innerHTML = "  " + cityValue;
+
+        let pinValue = sessionStorage.getItem("pincode");
+
+        document.getElementById("displayPin").innerHTML = "  " + pinValue;
+
+    </script>
+    <script>
+        function validatePhoneNumber() {
+            var phoneNumber = document.getElementById("phoneNumber").value;
+
+            // Define a simple pattern for a 10-digit US phone number
+            var phonePattern = /^\d{10}$/;
+
+            // Test if the provided phone number matches the pattern
+            if (phonePattern.test(phoneNumber)) {
+                alert("Valid phone number!");
+            } else {
+                alert("Invalid phone number. Please enter a 10-digit number.");
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
